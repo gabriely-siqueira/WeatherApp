@@ -47,6 +47,47 @@ public class WeatherApp extends JFrame {
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         searchButton.setBounds(375, 13, 47, 45);
         add(searchButton);
+
+        // WEATHER IMAGE
+        JLabel weatherConditionImage = new JLabel(loadImage("src/assets/cloudy.png"));
+        weatherConditionImage.setBounds(0, 125, 450, 217);
+        add(weatherConditionImage);
+
+        // TEMPERATURE TEXT
+        JLabel temperatureText = new JLabel("10°C");
+        temperatureText.setBounds(0, 350, 450, 54);
+        temperatureText.setFont(new Font("Dialog", Font.BOLD, 48));
+        temperatureText.setHorizontalAlignment(SwingConstants.CENTER);
+        add(temperatureText);
+
+        // WEATHER CONDITION DESCRIPTION
+        JLabel weatherDescription = new JLabel("Cloudy");
+        weatherDescription.setBounds(0, 405, 450, 36);
+        weatherDescription.setFont(new Font("Dialog", Font.PLAIN, 32));
+        weatherDescription.setHorizontalAlignment(SwingConstants.CENTER);
+        add(weatherDescription);
+
+        // HUMIDITY IMAGE
+        JLabel humidityImage = new JLabel(loadImage("src/assets/humidity.png"));
+        humidityImage.setBounds(15, 500, 74, 66);
+        add(humidityImage);
+
+        // HUMIDITY TEXT
+        JLabel humidityText = new JLabel("<html><b>Humidity</b> 100%</html>");
+        humidityText.setBounds(90, 500, 85, 55);
+        humidityText.setFont(new Font("Dialog", Font.PLAIN, 16));
+        add(humidityText);
+
+        //WINDSPEED IMAGE
+        JLabel windSpeedImage= new JLabel(loadImage("src/assets/windspeed.png"));
+        windSpeedImage.setBounds(220,500,74,66);
+        add(windSpeedImage);
+
+        //WINDSPEED TEXT
+        JLabel windSpeedText = new JLabel("<html><b>Windspeed</b> 15Km</html>");
+        windSpeedText.setBounds(310, 500, 85, 55);
+        windSpeedText.setFont(new Font("Dialog", Font.PLAIN, 16));
+        add(windSpeedText);
     }
 
     // METHOD TO LOAD IMAGE
@@ -56,6 +97,7 @@ public class WeatherApp extends JFrame {
             return new ImageIcon(image);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Could not find resource");
             return null;
         }
     }
